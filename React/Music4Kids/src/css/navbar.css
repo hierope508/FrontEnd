@@ -1,0 +1,9 @@
+.menus a:hover,
+.menus a:active,
+.menus a.active {
+  color:white;
+}
+
+.menus a{
+  color:black;
+}

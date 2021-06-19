@@ -1,0 +1,16 @@
+
+.quantity-field{
+  max-width: 60px;
+  max-height: 30px;
+  margin: 0 auto;
+  font-size: small;
+  text-align: center;
+}
+
+.botao{
+  font-size: larger;
+}
+
+h2{
+  font-size: larger;
+}

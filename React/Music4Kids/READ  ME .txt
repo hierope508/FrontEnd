@@ -1,0 +1,23 @@
+Laboratório de Soft
+
+Uma tela com vários blocos coloridos (Max 2 oitavas).
+
+Cada cor é uma nota
+
+Dentro dos blocos, colocaru uma barra (slide bar) que vai indicar a duração das notas e aumenta o tamanho do bloco
+
+Um bloco de loop que pode englobar um ou várias notas e tem uma label indicando quantas vezes o loop vai se repetir
+
+Desafios para repetir musica 
+
+Notas com siL~encio 
+
+conceito de loop 
+
+npm install react-dnd react-dnd-html5-backend
+
+https://react-dnd.github.io/react-dnd/docs/tutorial
+https://marcgg.com/blog/2016/11/01/javascript-audio/
+
+
+assessment patter recognition https://prek-math-te.stanford.edu/patterns-algebra/assessing-childrens-knowledge-pattern
