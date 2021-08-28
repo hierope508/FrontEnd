@@ -1,8 +1,7 @@
 .LoginForm{
-    margin-top: 7%;
+    margin-top: max(7vw, 7%);
     width: fit-content;
-    align-items: center;
-    align-self: center;
+    display: grid;
 }
 
 .LogoImg{
@@ -12,7 +11,5 @@
 }
 
 .Logodiv{
-    align-items: center;
     align-self: center;
-    
 }

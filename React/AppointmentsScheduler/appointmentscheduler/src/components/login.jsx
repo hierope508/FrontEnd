@@ -1,25 +1,29 @@
 import React, { Component } from "react";
+import { Redirect } from "react-router";
 import axios from "axios";
 
 import "./../css/Login.css";
 
 class Login extends Component {
-  state = {};
+  state = { loginHash: "", logged: false };
 
   handleLoginClick = (e) => {
     e.preventDefault();
     const login = document.getElementById("loginInput");
     console.log("Login:", login.value);
-    const todos = axios
-      .get("https://jsonplaceholder.typicode.com/todos?_limit=5")
-      .then((response) => console.log("Todos:", response.data));
-    console.log(todos);
+    // const todos = axios
+    //   .get("https://jsonplaceholder.typicode.com/todos?_limit=5")
+    //   .then((response) => console.log("Todos:", response.data));
+    // // console.log(todos);
+    this.setState({ logged: true });
   };
 
   render() {
-    const btnLogin = document.getElementById("btnLogin");
-    const pass = document.getElementById("passwordInput");
+    if (this.state.logged) {
+      return <Redirect to="/calendar" />;
+    }
 
+    console.log(this.state.logged, this.state.logged);
     const img = require("./../resources/simbolo-medicina.jpg");
 
     return (
@@ -72,7 +76,6 @@ class Login extends Component {
             Login
           </button>
         </form>
-
       </div>
     );
   }

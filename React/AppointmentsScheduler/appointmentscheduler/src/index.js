@@ -12,13 +12,17 @@ import {
 } from "react-router-dom";
 import "bootstrap/dist/css/bootstrap.min.css";
 import Login from "./components/login";
+import Calendar from "./components/calendar";
 
 ReactDOM.render(
   <React.StrictMode>
     <Router>
       <Switch>
         <Route exact path="/">
-          <Login/>
+          <Login />
+        </Route>
+        <Route exact path="/calendar">
+          <Calendar />
         </Route>
       </Switch>
     </Router>
