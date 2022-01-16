@@ -3,19 +3,29 @@ import { Redirect } from "react-router";
 import axios from "axios";
 
 import "./../css/Login.css";
+import configData from "../config.json";
 
 class Login extends Component {
   state = { loginHash: "", logged: false };
 
   handleLoginClick = (e) => {
     e.preventDefault();
-    const login = document.getElementById("loginInput");
-    console.log("Login:", login.value);
-    // const todos = axios
-    //   .get("https://jsonplaceholder.typicode.com/todos?_limit=5")
-    //   .then((response) => console.log("Todos:", response.data));
-    // // console.log(todos);
-    this.setState({ logged: true });
+    const login = document.getElementById("loginInput").value;
+    const pass = document.getElementById("passwordInput").value;
+
+    if (login && pass) {
+      const apiURL = `${configData.SERVER_URL}/Users/Authenticate/`;
+      const requestURL = `${apiURL}?email=${login}&password=${pass}`;
+      console.log(requestURL);
+      const todos = axios.get(requestURL).then((response) => {
+        console.log(response);
+        if (response.status == "200") {
+          this.setState({ logged: true });
+        }
+      });
+    } else {
+      console.log("Login or password invalid");
+    }
   };
 
   render() {
@@ -47,14 +57,13 @@ class Login extends Component {
             </div>
           </div>
           <div className="mb-3">
-            <label for="exampleInputPassword1" className="form-label">
+            <label for="passwordInput" className="form-label">
               Password
             </label>
             <input
               id="passwordInput"
               type="password"
               className="form-control"
-              id="exampleInputPassword1"
             />
           </div>
           <div className="mb-3 form-check">
